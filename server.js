@@ -13,8 +13,6 @@ app.use('/', express.static(__dirname + '/public'));
 
 app.use('/', index)
 
-
-
 app.listen(3000, function(req, res){
   console.log('Example app listening on port 3000')
 })

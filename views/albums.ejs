@@ -1,19 +1,10 @@
-
-<head>
-  <link rel="stylesheet" href="/style.css"/>
-</head>
-
-<body>
-  <%- include('partials/navbar') %>
-
-<h1>albumS</h1>
+<%- include('partials/navbar') %>
+<h1>Albums</h1>
 
 <ul>
 <% albums.forEach((album) => { %>
    <li>
      <h4><%= album.title %></h4>
    </li>
-
-
    <% }) %>
 </ul>

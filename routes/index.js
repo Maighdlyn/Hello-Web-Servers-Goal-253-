@@ -1,13 +1,13 @@
 var express = require('express')
 var router = express.Router()
 var albums = require('../public/albums.json')
-var artists = require('../public/artists.json')
-var songs = require('../public/songs.json')
+var artist = require('../public/artists.json')
+var song = require('../public/songs.json')
 
 
 
 router.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {artists: artist})
 })
 router.get('/artist/:artist_id', (req,res) => {
   res.render('artist')
@@ -20,7 +20,7 @@ router.get('/albums/:album_id', (req, res) =>{
   res.render('album')
 })
 router.get('/songs', (req, res) => {
-  res.render('songs')
+  res.render('songs', {songs: song})
 })
 
 module.exports = router
