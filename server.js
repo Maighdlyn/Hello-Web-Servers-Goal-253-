@@ -1,26 +1,22 @@
 var express = require('express')
 var app = express()
 var path = require('path')
+var albums = require('./public/albums.json')
+var artists = require('./public/artists.json')
+var songs = require('./public/songs.json')
+var index = require('./routes/index.js')
 
-app.listen(3900, function(req, res){
-  console.log('Example app listening on port 3900')
-})
 app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, 'views'))
+//app.set('views', path.join(__dirname, 'views'))
+
 app.use('/', express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-  res.render('index')
+app.use('/', index)
+
+
+
+app.listen(3000, function(req, res){
+  console.log('Example app listening on port 3000')
 })
-app.get('/artist/:artist_id', (req,res) => {
-  res.render('artist')
-})
-app.get('/albums', (req, res) => {
-  res.render('albums')
-})
-app.get('/albums/:album_id', (req, res) =>{
-  res.render('album')
-})
-app.get('/songs', (req, res) => {
-  res.render('songs')
-})
+
+module.exports = app
