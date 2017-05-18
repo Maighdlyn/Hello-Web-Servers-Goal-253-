@@ -1,4 +1,10 @@
-<body>
   <%- include('partials/navbar') %>
-  <h1>album</h1>
-</body>
+  <h1><%= album.title %></h1>
+
+    <% songs.forEach((song) => { %>
+      <div class = "item row">
+        <div class = "column">
+          <h2><%= song.title %></h2>
+        </div>
+      </div>
+    <% }) %>
