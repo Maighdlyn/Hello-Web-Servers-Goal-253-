@@ -62,7 +62,7 @@ router.get('/albums/:album_id', (req, res) =>{
   })
 })
 router.get('/songs', (req, res) => {
-  res.render('songs', {songs: song})
+  res.render('songs', {songs: songs})
 })
 
 module.exports = router

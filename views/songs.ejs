@@ -6,6 +6,11 @@
 <div class = "row">
   <h2><%= song.title %></h2>
   <p>Artist</p>
+  <p>Album</p>
+  <% if(song.duration%60 < 10){ %>
+    <h3><%= Math.floor(song.duration / 60) %>:0<%=song.duration % 60%></h3>
+  <% } else{%>
+    <h3><%= Math.floor(song.duration / 60) %>:<%=song.duration % 60%></h3>
+  <% } %>
 </div>
-
 <% }) %>
