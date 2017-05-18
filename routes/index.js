@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var albums = require('../public/albums.json')
 var artists = require('../public/artists.json')
-var song = require('../public/songs.json')
+var songs = require('../public/songs.json')
 
 function albumsForArtist(artistId){
   var albumArr = []
@@ -15,15 +15,41 @@ function albumsForArtist(artistId){
   return albumArr
 }
 
+function artistForAlbum(albumId){
+  for (var i = 0; i < artists.length; i++) {
+    if(albums.artist_id === artists.id)
+    return artists.name
+  }
+}
+
+function songsForAlbums(albumId){
+  var songsArr = []
+  albumId = parseInt(albumId)
+  for (var i = 0; i < songs.length; i++) {
+    if(albumId === songs[i].album_id){
+      songsArr.push(songs[i])
+    }
+  }
+  return songsArr
+}
+
+function secondsToMinutes(seconds){
+  var minutes = Math.floor(song.length/60)
+  var seconds = song.length%60
+  return minutes.toString() + ":" + seconds.toString()
+}
+
 router.get('/', (req, res) => {
-  var artist_id = req.params.id
-  var artistAlbums = albumsForArtist(artist_id)
+  var artistId = req.params.id
+  var artistAlbums = albumsForArtist(artistId)
   res.render('index', {artists: artists, albums:artistAlbums})
 })
 router.get('/artist/:artist_id', (req,res) => {
-  var artist_id = req.params.artist_id
-  var artistAlbums = albumsForArtist(artist_id)
-  res.render('artist', {artist: artists[artist_id - 1], albums:artistAlbums})
+  var artistId = req.params.artist_id
+  var artistAlbums = albumsForArtist(artistId)
+  res.render('artist', {
+    artist: artists[artistId - 1],
+    albums:artistAlbums})
 })
 router.get('/albums', (req, res) => {
   res.render('albums', {
@@ -32,7 +58,16 @@ router.get('/albums', (req, res) => {
   })
 })
 router.get('/albums/:album_id', (req, res) =>{
-  res.render('album')
+  var albumId = req.params.album_id
+  var albumSongs = songsForAlbums(albumId)
+  var artistName = artistForAlbum(albumId)
+  // var songLength = secondsToMinutes(songs.length)
+  res.render('album', {
+    album: albums[albumId - 1],
+    songs: albumSongs,
+    // length:
+    artist: artistName
+  })
 })
 router.get('/songs', (req, res) => {
   res.render('songs', {songs: song})
