@@ -10,6 +10,10 @@ h2 {
   color: #cab2fa;
 }
 
+h3 {
+  color: #ae91e8;
+}
+
 p {
   color: #ae91e8;
 }
@@ -39,7 +43,7 @@ li {
   background-color: #544d60;
 }
 
-.artist {
+.item {
   justify-content: space-around;
   border-style: inset;
   border-color: #b06845;

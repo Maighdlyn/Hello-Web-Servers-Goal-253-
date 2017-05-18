@@ -2,12 +2,14 @@
   <h1>Artists</h1>
 
   <% artists.forEach((artist) => { %>
-  <div class = "artist row">
+  <div class = "item row">
     <div class = "picture"></div>
     <div class = "column">
-      <h2><%= artist.name %></h2>
+      <a href = "/artist/<%=artist.id%>">
+        <h2><%= artist.name %></h2>
+      </a>
       <div class = "row">
-        <p>Albums: #<p>
+        <p>Albums: <%= albums.length%><p>
         <p>Genre: <%= artist.genre %></p>
       </div>
     </div>
