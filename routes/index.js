@@ -33,6 +33,12 @@ function songsForAlbums(albumId){
   return songsArr
 }
 
+function secondsToMinutes(seconds){
+  var minutes = Math.floor(song.length/60)
+  var seconds = song.length%60
+  return minutes.toString() + ":" + seconds.toString()
+}
+
 router.get('/', (req, res) => {
   var artistId = req.params.id
   var artistAlbums = albumsForArtist(artistId)
@@ -54,10 +60,12 @@ router.get('/albums', (req, res) => {
 router.get('/albums/:album_id', (req, res) =>{
   var albumId = req.params.album_id
   var albumSongs = songsForAlbums(albumId)
-  var artistName= artistForAlbum(albumId)
+  var artistName = artistForAlbum(albumId)
+  // var songLength = secondsToMinutes(songs.length)
   res.render('album', {
     album: albums[albumId - 1],
     songs: albumSongs,
+    // length:
     artist: artistName
   })
 })
