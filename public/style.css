@@ -10,32 +10,47 @@ h2 {
   color: #cab2fa;
 }
 
+h3 {
+  color: #ae91e8;
+}
+
 p {
   color: #ae91e8;
 }
 
+li {
+  color: #715f95;
+}
+
+/*a {
+  color: #b06845;
+}*/
+
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .column {
-  display: flex;
   flex-direction: column;
 }
 
 .navbar {
-  display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #544d60;
-  color: #b06845;
 }
 
-.artist {
+.item {
+  justify-content: space-around;
   border-style: inset;
   border-color: #b06845;
   border-width: 5px;
+  max-width: 1000px;
+  padding: 10px;
+  margin: 20px;
 }
 
 .picture {

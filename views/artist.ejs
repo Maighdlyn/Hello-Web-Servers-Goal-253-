@@ -1,9 +1,12 @@
-<head>
-  <link rel="stylesheet" href="/style.css"/>
-</head>
+<%- include('partials/navbar') %>
+<h1><%= artist.name %><h1>
 
-<body>
-  <%- include('partials/navbar') %>
-  <h1>Artist<h1>
-  <h2>Artist Name<h2>
-</body>
+<% albums.forEach((album) => { %>
+  <div class = "item row">
+    <div class = "picture"></div>
+    <div class = "column">
+       <p>title: <%= album.title%> </p>
+       <p>Genre:</p>
+    </div>
+  </div>
+<% }) %>
