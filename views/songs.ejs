@@ -4,9 +4,17 @@
 <% songs.forEach((song) => { %>
 
 <div class = "row songRow">
+
+  <div class "col-md-5 col-md-offset-1">
+
   <h2><%= song.title %></h2>
-  <p>Artist</p>
+</div>
+  <div class "col-md-1 col-md-offset-1">
+    <p>Artist</p>
+  </div>
+<div class "col-md-1 col-md-offset-1">
   <p>Album</p>
+</div>
 
   <% if(Math.floor(song.duration / 60) < 10){ %>
     <h3>0<%= Math.floor(song.duration / 60) %>
