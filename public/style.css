@@ -39,6 +39,12 @@ img{
   flex-direction: column;
 }
 
+.songRow {
+  border-bottom-color: #b06845;
+  border-bottom-style: solid;
+  margin: 0px 100px 0px 100px;
+}
+
 .navbar {
   flex-direction: row;
   justify-content: space-around;
