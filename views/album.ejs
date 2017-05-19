@@ -1,16 +1,22 @@
-  <%- include('partials/navbar') %>
+  <%- include('layout/navbar') %>
   <h1><%= album.title %></h1>
+  <h2>Artist</h2>
+  <h3><%= album.year %></h3>
 
   <div class = "row">
-    <p>track #<p>
-    <p>song title<p>
-    <p>song length<p>
+    <p>track #</p>
+    <p>song title</p>
+    <p>song length</p>
   </div>
 
-    <% songs.forEach((song) => { %>
-      <div class = "item row">
-        <h3><%= song.track_no%><h3>
-        <h2><%= song.title %></h2>
-        <h3><%= Math.floor(song.length/60) %>:<%= song.length%60 %></h3>
-      </div>
-    <% }) %>
+  <% songs.map((song) => { %>
+    <div class = "item row">
+      <h3><%= song.track_no%></h3>
+      <h2><%= song.title %></h2>
+      <% if(song.duration%60 < 10){ %>
+        <h3><%= Math.floor(song.duration / 60) %>:0<%=song.duration % 60%></h3>
+      <% } else{%>
+        <h3><%= Math.floor(song.duration / 60) %>:<%=song.duration % 60%></h3>
+      <% } %>
+    </div>
+  <% }) %>

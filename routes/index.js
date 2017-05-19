@@ -33,17 +33,17 @@ function songsForAlbums(albumId){
   return songsArr
 }
 
-function secondsToMinutes(seconds){
-  var minutes = Math.floor(song.length/60)
-  var seconds = song.length%60
-  return minutes.toString() + ":" + seconds.toString()
-}
-
 router.get('/', (req, res) => {
-  var artistId = req.params.id
-  var artistAlbums = albumsForArtist(artistId)
-  res.render('index', {artists: artists, albums:artistAlbums})
+  var artistAlbums = []
+  for (var i=0; i < artists.length; i++) {
+    artistAlbums.push(albumsForArtist(artists[i].id))
+  }
+  res.render('index', {
+    artists : artists,
+    albums : artistAlbums
+  })
 })
+
 router.get('/artist/:artist_id', (req,res) => {
   var artistId = req.params.artist_id
   var artistAlbums = albumsForArtist(artistId)
@@ -51,26 +51,26 @@ router.get('/artist/:artist_id', (req,res) => {
     artist: artists[artistId - 1],
     albums:artistAlbums})
 })
+
 router.get('/albums', (req, res) => {
   res.render('albums', {
     albums: albums,
     artists: artists
   })
 })
+
 router.get('/albums/:album_id', (req, res) =>{
   var albumId = req.params.album_id
   var albumSongs = songsForAlbums(albumId)
   var artistName = artistForAlbum(albumId)
-  // var songLength = secondsToMinutes(songs.length)
   res.render('album', {
     album: albums[albumId - 1],
     songs: albumSongs,
-    // length:
     artist: artistName
   })
 })
 router.get('/songs', (req, res) => {
-  res.render('songs', {songs: song})
+  res.render('songs', {songs: songs})
 })
 
 module.exports = router

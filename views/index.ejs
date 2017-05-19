@@ -1,7 +1,7 @@
-<%- include('partials/navbar') %>
+<%- include('layout/navbar') %>
   <h1>Artists</h1>
 
-  <% artists.forEach((artist) => { %>
+  <% artists.forEach( (artist, i) => { %>
   <div class = "item row">
     <div class = "picture"></div>
     <div class = "column">
@@ -9,7 +9,7 @@
         <h2><%= artist.name %></h2>
       </a>
       <div class = "row">
-        <p>Albums: <%= albums.length%><p>
+        <p>Albums: <%= albums[i].length %></p>
         <p>Genre: <%= artist.genre %></p>
       </div>
     </div>
