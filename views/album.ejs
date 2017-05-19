@@ -1,6 +1,6 @@
   <%- include('layout/navbar') %>
   <h1><%= album.title %></h1>
-  <h2>Artist</h2>
+  <h2>Artist (link)</h2>
   <h3><%= album.year %></h3>
 
   <div class = "row">
@@ -13,10 +13,17 @@
     <div class = "item row">
       <h3><%= song.track_no%></h3>
       <h2><%= song.title %></h2>
-      <% if(song.duration%60 < 10){ %>
-        <h3><%= Math.floor(song.duration / 60) %>:0<%=song.duration % 60%></h3>
+      <% if(Math.floor(song.duration / 60) < 10){ %>
+        <h3>0<%= Math.floor(song.duration / 60) %>
       <% } else{%>
-        <h3><%= Math.floor(song.duration / 60) %>:<%=song.duration % 60%></h3>
+        <h3>:<%= Math.floor(song.duration / 60) %>
       <% } %>
+
+      <% if(song.duration%60 < 10){ %>
+        : 0<%=song.duration % 60%></h3>
+      <% } else{%>
+        : <%=song.duration % 60%></h3>
+      <% } %>
+        </div>
     </div>
   <% }) %>

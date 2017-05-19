@@ -7,10 +7,18 @@
   <h2><%= song.title %></h2>
   <p>Artist</p>
   <p>Album</p>
-  <% if(song.duration%60 < 10){ %>
-    <h3><%= Math.floor(song.duration / 60) %>:0<%=song.duration % 60%></h3>
+
+  <% if(Math.floor(song.duration / 60) < 10){ %>
+    <h3>0<%= Math.floor(song.duration / 60) %>
   <% } else{%>
-    <h3><%= Math.floor(song.duration / 60) %>:<%=song.duration % 60%></h3>
+    <h3>:<%= Math.floor(song.duration / 60) %>
   <% } %>
-</div>
+
+  <% if(song.duration%60 < 10){ %>
+    : 0<%=song.duration % 60%></h3>
+  <% } else{%>
+    : <%=song.duration % 60%></h3>
+  <% } %>
+    </div>
+
 <% }) %>

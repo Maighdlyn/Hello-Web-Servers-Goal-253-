@@ -39,7 +39,7 @@ At this point, you don't need to actually _show_ any real data, just render HTML
 - [x] Songs view shows a list of all songs (see [wireframe](#wireframes))
 - [x] Individual artist view file is called `views/artist.ejs`
 - [x] Individual artist view is rendered at route `/artists/:artist_id`
-- [x] Individual artist view shows a list of the artist's songs (see [wireframe](#wireframes))
+- [x] Individual artist view shows a list of the artist's albums (see [wireframe](#wireframes))
 - [x] Individual album view file is called `views/album.ejs`
 - [x] Individual album view is rendered at route `/albums/:album_id`
 - [x] Individual album view shows a list of the album's songs (see [wireframe](#wireframes))
@@ -56,7 +56,7 @@ Use the [fake data set](#fake-data) provided.
 - [x] Main view shows artist name and genre.
 - [x] Artist name on main view links to the artist view (`/artists/:artist_id`).
 - [x] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
-- [x] Album list view shows the name of the artist for each album.
+- [ ] Album list view shows the name of the artist for each album.
 - [x] Album name on album list view links to the album view (`/albums/:album_id`).
 - [x] Artist name on album list view links to the artist view (`/artists/:artist_id`).
 - [x] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
