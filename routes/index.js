@@ -16,11 +16,10 @@ function albumsForArtist(artistId){
 }
 
 function artistForAlbum(albumId){
-  for (var i = 0; i < artists.length; i++) {
-    if( albums[albumId].artist_id === artists.id)
-      // var x = albums[albumId].artist_id
-      // return artists[x - 1].name
-      return "yay"
+  for (var i = 0; i <= artists.length; i++) {
+    // The thing I fixed was the [albumId - 1] on the following line!
+    if( albums[albumId - 1].artist_id === artists[i].id){
+      return artists[i].name
     }
   }
 }

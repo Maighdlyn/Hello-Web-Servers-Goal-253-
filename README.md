@@ -56,7 +56,7 @@ Use the [fake data set](#fake-data) provided.
 - [x] Main view shows artist name and genre.
 - [x] Artist name on main view links to the artist view (`/artists/:artist_id`).
 - [x] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
-- [ ] Album list view shows the name of the artist for each album.
+- [x] Album list view shows the name of the artist for each album.
 - [x] Album name on album list view links to the album view (`/albums/:album_id`).
 - [x] Artist name on album list view links to the artist view (`/artists/:artist_id`).
 - [x] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
