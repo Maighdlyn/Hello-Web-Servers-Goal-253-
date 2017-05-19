@@ -9,9 +9,8 @@
         <h2><%= album.title %></h2>
       </a>
       <a href = "/artist/<%=album.artist_id%>">
-        <h3>artist: <%= album.artist_id%><h3>
+        <h3>artist: <%= artists[album.artist_id - 1].name%></h3>
       </a>
-      <p>song count: <%= songs[i].length%></p>
      </div>
    </div>
 <% }) %>

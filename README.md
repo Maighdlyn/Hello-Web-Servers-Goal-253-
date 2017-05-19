@@ -56,7 +56,7 @@ Use the [fake data set](#fake-data) provided.
 - [x] Main view shows artist name and genre.
 - [x] Artist name on main view links to the artist view (`/artists/:artist_id`).
 - [x] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
-- [ ] Album list view shows the name of the artist for each album.
+- [x] Album list view shows the name of the artist for each album.
 - [x] Album name on album list view links to the album view (`/albums/:album_id`).
 - [x] Artist name on album list view links to the artist view (`/artists/:artist_id`).
 - [x] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
@@ -68,7 +68,7 @@ Use the [fake data set](#fake-data) provided.
 - [x] Album names on artist view links to the album view (`/albums/:album_id`).
 - [x] Album view (`/albums/:album_id`) shows all albums from the [fake album data](#fake-data).
     **Hint:** you can [filter][array-filter] the songs by their `album_id` property.
-- [ ] Album view shows album title, artist name, and year released.
+- [x] Album view shows album title, artist name, and year released.
 - [x] Album view each song title, its track number, and length in seconds.
 - [x] Artist name on album view links to the artist view (`/artists/:artist_id`).
 
