@@ -56,7 +56,7 @@ Use the [fake data set](#fake-data) provided.
 - [x] Main view shows artist name and genre.
 - [x] Artist name on main view links to the artist view (`/artists/:artist_id`).
 - [x] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
-- [x] Album list view shows the name of the artist for each album.
+- [ ] Album list view shows the name of the artist for each album.
 - [x] Album name on album list view links to the album view (`/albums/:album_id`).
 - [x] Artist name on album list view links to the artist view (`/artists/:artist_id`).
 - [x] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
@@ -77,10 +77,10 @@ Use the [fake data set](#fake-data) provided.
 Improve the views by adding _summary_ data (e.g. song count for album), parsing the song length into minutes and seconds, showing actual album artwork and artist profile images, and integrating a CSS framework to make it prettier.
 
 - [x] Main view (`/`) shows an album count for each artist.
-- [ ] Album list view (`/albums`) shows a song count for each album.
-- [ ] Artist view (`/artists/:artist_id`) shows an album count for the artist.
-- [ ] Artist view (`/artists/:artist_id`) shows a song count for each album.
-- [ ] Album view (`/albums/:album_id`) shows a song count for the album.
+- [x] Album list view (`/albums`) shows a song count for each album.
+- [x] Artist view (`/artists/:artist_id`) shows an album count for the artist.
+- [x] Artist view (`/artists/:artist_id`) shows a song count for each album.
+- [x] Album view (`/albums/:album_id`) shows a song count for the album.
 - [x] On all views that show song length, the length is shown in `mm:ss` format.
     For example, if the song has a length of 286 seconds, then it would be shown as `04:46` (286 seconds = 4 minutes, 46 seconds).
 - [ ] Actual album images are used instead of placeholders on albums list (`/albums`), artist (`/artists/:artist_id`), and album (`/albums/:album_id`) views.

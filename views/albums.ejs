@@ -1,14 +1,17 @@
 <%- include('layout/navbar') %>
 <h1>Albums</h1>
 
-<% albums.forEach((album) => { %>
-   <div class = "item row">
-     <div class = "picture"><img src="<%= album.id %>.jpg"></div>
-     <div class = "column">
-       <a href = "/albums/<%=album.id%>">
-       <h2><%= album.title %></h2></a>
-       <a href = "/artist/<%=album.artist_id%>"><h3><%= album.artist_id%><h3></a>
-        <p>song count</p>
+<% albums.forEach((album, i) => { %>
+  <div class = "item row">
+    <img src="<%= album.id %>.jpg" class="pictureSize">
+    <div class = "column">
+      <a href = "/albums/<%=album.id%>">
+        <h2><%= album.title %></h2>
+      </a>
+      <a href = "/artist/<%=album.artist_id%>">
+        <h3>artist: <%= album.artist_id%><h3>
+      </a>
+      <p>song count: <%= songs[i].length%></p>
      </div>
    </div>
 <% }) %>

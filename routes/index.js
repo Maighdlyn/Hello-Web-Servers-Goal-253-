@@ -32,6 +32,7 @@ function songsForAlbums(albumId){
       songsArr.push(songs[i])
     }
   }
+  console.log(songsArr)
   return songsArr
 }
 
@@ -49,15 +50,26 @@ router.get('/', (req, res) => {
 router.get('/artist/:artist_id', (req,res) => {
   var artistId = req.params.artist_id
   var artistAlbums = albumsForArtist(artistId)
+  var albumSongs = []
+  for (var i=0; i < albums.length; i++) {
+    albumSongs.push(songsForAlbums(albums[i].id))
+  }
   res.render('artist', {
     artist: artists[artistId - 1],
-    albums:artistAlbums})
+    albums: artistAlbums,
+    songs: albumSongs
+  })
 })
 
 router.get('/albums', (req, res) => {
+  var albumSongs = []
+  for (var i=0; i < albums.length; i++) {
+    albumSongs.push(songsForAlbums(albums[i].id))
+  }
   res.render('albums', {
     albums: albums,
-    artists: artists
+    artists: artists,
+    songs: albumSongs
   })
 })
 
