@@ -1,15 +1,18 @@
   <%- include('layout/navbar') %>
   <h1><%= album.title %></h1>
-  <h2>Artist (link)</h2>
+  <a href = "/artist/<%=album.artist_id%>">
+    <h2><%=artist%></h2>
+  </a>
   <h3><%= album.year %></h3>
-
+  <p>tracks: <%= songs.length %></p>
+  <img src="/Albums/<%= album.id %>.jpg" class="pictureSize">
   <div class = "row">
     <p>track #</p>
     <p>song title</p>
     <p>song length</p>
   </div>
 
-  <% songs.map((song) => { %>
+  <% songs.map((song, i) => { %>
     <div class = "item row">
       <h3><%= song.track_no%></h3>
       <h2><%= song.title %></h2>

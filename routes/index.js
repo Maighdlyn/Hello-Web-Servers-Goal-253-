@@ -16,9 +16,11 @@ function albumsForArtist(artistId){
 }
 
 function artistForAlbum(albumId){
-  for (var i = 0; i < artists.length; i++) {
-    if(albums.artist_id === artists.id)
-    return artists.name
+  for (var i = 0; i <= artists.length; i++) {
+    // The thing I fixed was the [albumId - 1] on the following line!
+    if( albums[albumId - 1].artist_id === artists[i].id){
+      return artists[i].name
+    }
   }
 }
 
@@ -30,6 +32,7 @@ function songsForAlbums(albumId){
       songsArr.push(songs[i])
     }
   }
+  console.log(songsArr)
   return songsArr
 }
 
@@ -47,15 +50,26 @@ router.get('/', (req, res) => {
 router.get('/artist/:artist_id', (req,res) => {
   var artistId = req.params.artist_id
   var artistAlbums = albumsForArtist(artistId)
+  var albumSongs = []
+  for (var i=0; i < albums.length; i++) {
+    albumSongs.push(songsForAlbums(albums[i].id))
+  }
   res.render('artist', {
     artist: artists[artistId - 1],
-    albums:artistAlbums})
+    albums: artistAlbums,
+    songs: albumSongs
+  })
 })
 
 router.get('/albums', (req, res) => {
+  var albumSongs = []
+  for (var i=0; i < albums.length; i++) {
+    albumSongs.push(songsForAlbums(albums[i].id))
+  }
   res.render('albums', {
     albums: albums,
-    artists: artists
+    artists: artists,
+    songs: albumSongs
   })
 })
 

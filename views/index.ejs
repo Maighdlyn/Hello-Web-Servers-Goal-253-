@@ -3,7 +3,9 @@
 
   <% artists.forEach( (artist, i) => { %>
   <div class = "item row">
-    <div class = "picture"></div>
+    <div class = "picture">
+      <img src="/Artists/artist<%= artist.id %>.jpg" class="pictureSize">
+    </div>
     <div class = "column">
       <a href = "/artist/<%=artist.id%>">
         <h2><%= artist.name %></h2>
