@@ -7,7 +7,6 @@
 <% albums.forEach((album, i) => { %>
   <div class = "item row">
     <img src="/Albums/<%= albums[i].id %>.jpg" class="pictureSize"/>
-    <p>??? "<%= albums[i].id %>.jpg"</p>
     <div class = "column">
       <a href = "/albums/<%=album.id%>">
         <h2><%= album.title%> </h2>
