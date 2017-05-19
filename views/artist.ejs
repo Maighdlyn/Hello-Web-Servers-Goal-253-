@@ -1,12 +1,13 @@
-<%- include('partials/navbar') %>
+<%- include('layout/navbar') %>
 <h1><%= artist.name %><h1>
+<h2>Genre: <%= artist.genre %></h2>
 
 <% albums.forEach((album) => { %>
   <div class = "item row">
     <div class = "picture"></div>
     <div class = "column">
-       <p>title: <%= album.title%> </p>
-       <p>Genre:</p>
+       <a href = "/albums/<%=album.id%>"><h2><%= album.title%> </h2></a>
+       <p><%= album.year %></p>
     </div>
   </div>
 <% }) %>

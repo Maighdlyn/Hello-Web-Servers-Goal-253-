@@ -34,7 +34,6 @@ function songsForAlbums(albumId){
 }
 
 router.get('/', (req, res) => {
-  var artistId = 1
   var artistAlbums = []
   for (var i=0; i < artists.length; i++) {
     artistAlbums.push(albumsForArtist(artists[i].id))
