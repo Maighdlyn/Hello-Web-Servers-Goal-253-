@@ -58,7 +58,7 @@ Use the [fake data set](#fake-data) provided.
 - [x] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
 - [ ] Album list view shows the name of the artist for each album.
 - [x] Album name on album list view links to the album view (`/albums/:album_id`).
-- [ ] Artist name on album list view links to the artist view (`/artists/:artist_id`).
+- [x] Artist name on album list view links to the artist view (`/artists/:artist_id`).
 - [x] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
 - [ ] Song list view shows song title, artist, album, and song length in seconds.
 - [x] Artist view (`/artists/:artist_id`) shows all albums for the artists with id `:artist_id` from the [fake artist data](#fake-data).
@@ -70,7 +70,7 @@ Use the [fake data set](#fake-data) provided.
     **Hint:** you can [filter][array-filter] the songs by their `album_id` property.
 - [ ] Album view shows album title, artist name, and year released.
 - [x] Album view each song title, its track number, and length in seconds.
-- [ ] Artist name on album view links to the artist view (`/artists/:artist_id`).
+- [x] Artist name on album view links to the artist view (`/artists/:artist_id`).
 
 #### Stage 4
 
