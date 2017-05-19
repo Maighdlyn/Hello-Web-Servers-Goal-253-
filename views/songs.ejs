@@ -1,7 +1,7 @@
 <%- include('layout/navbar') %>
 <h1>Songs</h1>
 
-<% songs.forEach((song) => { %>
+<% songs.forEach((song, i) => { %>
 
 <div class = "row songRow">
 
@@ -10,10 +10,10 @@
   <h2><%= song.title %></h2>
 </div>
   <div class "col-md-1 col-md-offset-1">
-    <p>Artist</p>
+    <p>Artist:<%=  %></p>
   </div>
 <div class "col-md-1 col-md-offset-1">
-  <p>Album</p>
+  <p><%= albums[songs[i].album_id - 1].title%></p>
 </div>
 
   <% if(Math.floor(song.duration / 60) < 10){ %>

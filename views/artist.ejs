@@ -9,10 +9,10 @@
     <img src="/Albums/<%= albums[i].id %>.jpg" class="pictureSize"/>
     <div class = "column">
       <a href = "/albums/<%=album.id%>">
-        <h2><%= album.title%> </h2>
+        <h1><%= album.title%> </h1>
       </a>
-      <p><%= album.year %></p>
-      <p>tracks: <%= songs[i].length %></p>
+      <h3><%= album.year %></h3>
+      <h3>tracks: <%= songs[i].length %></h3>
     </div>
   </div>
 <% }) %>

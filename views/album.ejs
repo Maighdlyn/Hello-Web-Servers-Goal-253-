@@ -4,18 +4,15 @@
     <h2><%=artist%></h2>
   </a>
   <h3><%= album.year %></h3>
-  <p>tracks: <%= songs.length %></p>
+  <h3>tracks: <%= songs.length %></h3>
   <img src="/Albums/<%= album.id %>.jpg" class="pictureSize">
-  <div class = "row">
-    <p>track #</p>
-    <p>song title</p>
-    <p>song length</p>
-  </div>
+
 
   <% songs.map((song, i) => { %>
     <div class = "item row">
       <h3><%= song.track_no%></h3>
       <h2><%= song.title %></h2>
+
       <% if(Math.floor(song.duration / 60) < 10){ %>
         <h3>0<%= Math.floor(song.duration / 60) %>
       <% } else{%>
