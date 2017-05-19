@@ -3,7 +3,7 @@
 
 <% albums.forEach((album, i) => { %>
   <div class = "item row">
-    <img src="<%= album.id %>.jpg" class="pictureSize">
+    <img src="/Albums/<%= album.id %>.jpg" class="pictureSize">
     <div class = "column">
       <a href = "/albums/<%=album.id%>">
         <h2><%= album.title %></h2>

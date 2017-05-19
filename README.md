@@ -83,9 +83,9 @@ Improve the views by adding _summary_ data (e.g. song count for album), parsing 
 - [x] Album view (`/albums/:album_id`) shows a song count for the album.
 - [x] On all views that show song length, the length is shown in `mm:ss` format.
     For example, if the song has a length of 286 seconds, then it would be shown as `04:46` (286 seconds = 4 minutes, 46 seconds).
-- [ ] Actual album images are used instead of placeholders on albums list (`/albums`), artist (`/artists/:artist_id`), and album (`/albums/:album_id`) views.
+- [x] Actual album images are used instead of placeholders on albums list (`/albums`), artist (`/artists/:artist_id`), and album (`/albums/:album_id`) views.
     **Hint:** once you find an image (Google image search is a good place for this), you can add the URL to the `albums.json` fake data file.
-- [ ] Actual artist profile images are used instead of placeholders on main view (`/`) and artist view (`/artists/:artist_id`).
+- [x] Actual artist profile images are used instead of placeholders on main view (`/`) and artist view (`/artists/:artist_id`).
     **Hint:** once you find an image (Google image search is a good place for this), you can add the URL to the `artists.json` fake data file.
 - [x] App uses a CSS framework like [Twitter bootstrap][bootstrap] or Yahoo's [Pure.css][pure-css].
 
